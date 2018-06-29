@@ -43,6 +43,42 @@ p {
     flex-direction: column;
     width: 20%;
 }
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.login-form > h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 300;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.login-form > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.login-form > input {
+    margin: 10px 20px;
+    background-color: #fff;
+}
+
+.login-form > input[texte="button"] {
+    text-transform: uppercase;
+    color: blue;
+    border: 1px solid #333;
+    padding: 5px 10px;
+}
+
+.login-form > input:focus {
+    outline: none;
+}
+
 .hidden {
     display: none;
 }

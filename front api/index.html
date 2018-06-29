@@ -8,16 +8,30 @@
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 	</head>
 	<body>
-		<section data-view="home">
-			<h1>HOME</h1>
-			<div class="user-add">
-				<input type="text" name="name" value="">
-				<input type="button" name="" value="Inserer" data-action="insert">
+		<span data-view='message' data-severity='success hidden'></span>
+		<span data-view='message' data-severity='error hidden'></span>
+		<span data-view='message' data-severity='warning hidden'></span>
+
+		<section data-view='login' class="hidden">
+			<h1>Home Login</h1>
+			<div class='login-form'>
+				<input type="text" name="name" value="" placeholder="name" data-value="name">
+				<input type="password" name="password" placeholder="password" data-value="pass">
+				<input data-action="login" type="button" name="" value="Connect">
 			</div>
 		</section>
-		<section data-view="users" class="hidden">
-			
+
+		<section data-view="main" class="hidden">
+			<h1>Connection Done !</h1>
 		</section>
+
 	</body>
+
+	<script type="text/javascript" src="./js/authHelper.js"></script>
+	<script type="text/javascript" src="./js/flashHelper.js"></script>
+	<script type="text/javascript" src="./js/runtime.js"></script>
+	<script type="text/javascript" src="./js/viewHelper.js"></script>
+	<script type="text/javascript" src="./js/requestHelper.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
+
 </html>

@@ -9,24 +9,10 @@ class UserController extends Controller
 {
     public function getAllUsers()
     {
-    	return User::all()->load('roles');
-    }
-
-    public function getOneUser(Request $request)
-    {
-    	$user = User::find($request->id);
-    	if($user == null) {
-    		return response([
-    			'status' => 'User not find'
-    		]);
-    	} else {
-        $user->load('roles');
-    		return response([
-	       		'status' => 'show 1', 
-	       		'data' => $user
-       		]);
-    	}
-
+    	return response()->json([
+            'succes' => 'succes', 
+            'succesMessage' => User::all()->load('roles')
+          ]);
     }
 
     public function deleteOne(Request $request)
@@ -45,18 +31,7 @@ class UserController extends Controller
         'error' => 'Cannot delete user',
         'errorMessage' => 'Syntax error'
       ]);
-      // Ma methode
-      /*
-    	User::destroy($request->id);
-    	if($user == null) {
-    		return response([
-    			'status' => 'User not find'
-    		]);
-    	} else {
-    		return response([
-       			'status' => 'delete 1',
-       		]);
-    	}*/
+
 
     }
 
@@ -73,46 +48,11 @@ class UserController extends Controller
         'status' => 'add 1',
         'succesMessage' => $password
       ]);
-      //Another methode
-      /* if($request->input('name') !== null) {
 
-        // @TODO find a solution less greedy 
-
-        if(User::where('name', request->name)->get()->first() === null) {
-        $user->name = $request->input('name');
-        $password = st_random(15);
-        $user->password = bcrypt($password);
-        $user->save();
-        return response()->json([
-        'success' => 'New user create',  
-        'succesMessage' => $password
-        ]);
-      }
-      }
-      return response()->json([
-      'error' => 'Cannot Insert User',
-      'errorMessage' => 'Read the docs, you're have some bug maybe'
-      ]);
-      */
 
     }
     public function updateOne(Request $request)
-    {/*
-    	$user = User::find($request->id);
-		if($user == null) {
-    		return response([
-    			'status' => 'User not find'
-    		]);
-    	} else {
-	    	$user->name = $request->name;
-	       	$user->password = bcrypt($request->password);
-	       	$user->save();
-	       	return response([
-	       		'status' => 'update 1',
-	       		'data' => $user
-       		]);
-       }
-       /*/
+    {
        $name = $request->input('name');
        if($request->id !== null){
        	$user = User::find($request->id);
@@ -147,3 +87,4 @@ class UserController extends Controller
     	]);
     }
 }
+

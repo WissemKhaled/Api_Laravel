@@ -1,3 +1,7 @@
+runtime.addEventListeners();
+runtime.toggleView();
+
+/*
 let xhttp;
 xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -111,5 +115,5 @@ document.querySelector('[data-action="insert"]').addEventListener('click', funct
 		xhttp.setRequestHeader('Content-Type', 'application/json');
 		xhttp.send(JSON.stringify({name: document.querySelector('input[name=name]').value}));
 	}
-});
+});*/
 

@@ -45,3 +45,4 @@ Route::group(['middleware' => ['check.auth']], function () {
 });
 
 Route::post('/login', 'LoginController@login');
+Route::post('/logout', 'LoginController@logout');
